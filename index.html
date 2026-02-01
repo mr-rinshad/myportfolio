@@ -44,6 +44,46 @@
     .nav-link:hover {
       color: #0d6efd !important;
     }
+   /* Navbar background */
+.custom-navbar {
+  background-color: #0d1117;
+  border-bottom: 1px solid #161b22; /* subtle separation */
+}
+
+/* Logo */
+.navbar-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+ 
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Nav links */
+.custom-navbar .nav-link {
+  color: #c9d1d9;
+  font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #58a6ff;
+}
+
+/* Toggler (important for dark bg) */
+.navbar-toggler {
+  border-color: #30363d;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
 
     /* Hero */
     #hero {
@@ -66,10 +106,16 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      border: 1px solid transparent;
+      
     }
 
     .skill-card:hover {
-      transform: translateY(-8px);
+     
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      border-color: #0d6efd;
+    
     }
 
     .skill-card::before {
@@ -210,12 +256,17 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
   <div class="container">
-    <a class="navbar-brand" href="#">Rinshad</a>
+
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/logo3.jpg" alt="MR Logo" class="navbar-logo">
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
@@ -225,8 +276,10 @@
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
+
 
 <!-- Hero -->
 <section id="hero" class="dark-section">
@@ -250,7 +303,7 @@
         <a href="files/Rinshad_CV.pdf" download class="btn btn-primary mt-3">Download CV</a>
       </div>
       <div class="col-md-6 text-center">
-        <img src="images/rinshad.jpg" class="img-fluid rounded-4 shadow" style="max-width:350px;">
+        <img src="images/rinshadart.png" class="img-fluid rounded-4 shadow" style="max-width:350px;">
       </div>
     </div>
   </div>
